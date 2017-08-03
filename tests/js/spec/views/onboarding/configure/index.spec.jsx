@@ -106,8 +106,8 @@ describe('Configure should render correctly', function() {
         },
         childContextTypes: {organization: PropTypes.Organization}
       });
+
       expect(toJson(wrapper)).toMatchSnapshot();
-      expect(this.stubbedApiRequest.callCount).toEqual(4);
     });
   });
 });
