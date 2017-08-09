@@ -154,37 +154,45 @@
     }
   }
 
-  .platformicon-stack{
-    background-color: white;
-    position: absolute;
+
+  .install .install-content {
+    padding-left: 15px; // Fix .row negative margin
+  }
+}
+
+
+
+.project-name{
+  background: #fff;
+  box-shadow: 0 -1px 0 rgba(0,0,0, .1);
+  padding: 20px 0;
+  position: sticky;
+  bottom: 0;
+  .clearfix;
+
+  .platform-tile{
+    display: inline-block;
+    vertical-align: middle;
   }
 
-  .platform-picker{
-    .nav-tabs {
-      border-bottom: 1px solid @trim;
-      margin: 0 0 15px;
-    }
-    .platform-filter-container {
-      .form-control;
-      border-radius: 22px;
-      padding: 0 8px;
-      position: relative;
-      top: -4px;
+  .project-name-wrapper {
+    .form-control;
+    position: relative;
+    padding-left: 44px;
+    width: 300px;
+    float: left;
 
-      @media(max-width: @screen-sm-max) {
-        display: none;
-      }
-
-      .icon-search {
-        color: @30;
-        font-size: 12px;
-        margin-right: 4px;
-      }
+    &.required{
+      border: 1px #e03e2f solid;
     }
-    .platform-filter {
-      background: transparent;
-      border: none;
-      font-size: 14px;
+
+    input {
+      background: none;
+      border: 0;
+      display: block;
+      width: 100%;
+      font-weight: 600;
+
       &:focus {
         outline: none;
       }
@@ -193,103 +201,99 @@
         color: @50;
       }
     }
-    .platform-tiles{
-      margin: auto;
+
+    .platform-tile {
+      position: absolute;
+      left: 6px;
+      top: 3px;
+      .platformicon {
+        color: @40 !important;
+      }
+    }
+  }
+}
+
+
+.platformicon-stack{
+  background-color: white;
+  position: absolute;
+}
+
+.platform-picker{
+  .nav-tabs {
+    border-bottom: 1px solid @trim;
+    margin: 0 0 15px;
+  }
+  .platform-filter-container {
+    .form-control;
+    border-radius: 22px;
+    padding: 0 8px;
+    position: relative;
+    top: -4px;
+
+    @media(max-width: @screen-sm-max) {
+      display: none;
+    }
+
+    .icon-search {
+      color: @30;
+      font-size: 12px;
+      margin-right: 4px;
+    }
+  }
+  .platform-filter {
+    background: transparent;
+    border: none;
+    font-size: 14px;
+    &:focus {
+      outline: none;
+    }
+
+    &::placeholder {
+      color: @50;
+    }
+  }
+  .platform-tiles{
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 0 15px;
+
+    .platform-card {
       display: flex;
-      flex-wrap: wrap;
-      padding: 0 0 15px;
+      flex-direction: column;
+      width: 120px;
+      padding: 0 0 14px;
+      cursor: pointer;
+      border-radius: 4px;
 
-      .platform-card {
-        display: flex;
-        flex-direction: column;
-        width: 120px;
-        padding: 0 0 14px;
-        cursor: pointer;
-        border-radius: 4px;
-
-        @media(max-width: @screen-sm-max) {
-          width: 70px;
-        }
-
-        &:hover {
-          background: #f7f5fa;
-        }
-
-        &.selected {
-          background: darken(@alert-info-bg-color, 2);
-      }
+      @media(max-width: @screen-sm-max) {
+        width: 70px;
       }
 
-      &.client-platform-list li {
-        margin: 0 auto;
+      &:hover {
+        background: #f7f5fa;
       }
-      &.client-platform-list.shade{
-        background-color: @40;
-        filter: brightness(0.4);
-      }
+
+      &.selected {
+        background: darken(@alert-info-bg-color, 2);
+    }
     }
 
-    h5 {
-      text-align: center;
-      margin: 0;
-      font-size: 15px;
-      .truncate;
-      line-height: 1.2;
+    &.client-platform-list li {
+      margin: 0 auto;
+    }
+    &.client-platform-list.shade{
+      background-color: @40;
+      filter: brightness(0.4);
     }
   }
 
-  .project-name{
-    background: #fff;
-    box-shadow: 0 -1px 0 rgba(0,0,0, .1);
-    padding: 20px 0;
-    position: sticky;
-    bottom: 0;
-    .clearfix;
-
-    .platform-tile{
-      display: inline-block;
-      vertical-align: middle;
-    }
-
-    .project-name-wrapper {
-      .form-control;
-      position: relative;
-      padding-left: 44px;
-      width: 300px;
-      float: left;
-
-      &.required{
-        border: 1px #e03e2f solid;
-      }
-
-      input {
-        background: none;
-        border: 0;
-        display: block;
-        width: 100%;
-        font-weight: 600;
-
-        &:focus {
-          outline: none;
-        }
-
-        &::placeholder {
-          color: @50;
-        }
-      }
-
-      .platform-tile {
-        position: absolute;
-        left: 6px;
-        top: 3px;
-        .platformicon {
-          color: @40 !important;
-        }
-      }
-    }
-  }
-
-  .install .install-content {
-    padding-left: 15px; // Fix .row negative margin
+  h5 {
+    text-align: center;
+    margin: 0;
+    font-size: 15px;
+    .truncate;
+    line-height: 1.2;
   }
 }
